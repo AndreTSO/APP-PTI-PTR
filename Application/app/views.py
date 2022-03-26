@@ -19,6 +19,18 @@ def home(request):
         }
     )
 
+def index(request):
+    """Renders the index page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'index.html',
+        {
+            'title':'Home Page',
+            'year':datetime.now().year,
+        }
+    )
+
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
