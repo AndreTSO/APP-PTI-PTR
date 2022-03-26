@@ -53,6 +53,11 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="app\templates\app\css" />
+    <Folder Include="app\templates\app\fonts" />
+    <Folder Include="app\templates\app\images" />
+    <Folder Include="app\templates\app\mail" />
+    <Folder Include="app\templates\app\js" />
     <Folder Include="python_webapp_django\" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +67,8 @@
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\templates\css\*.css" />
+    <Content Include="app\templates\js\*.js" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
     <Content Include="app\static\app\content\site.css" />
     <Content Include="app\static\app\scripts\bootstrap.js" />
@@ -80,6 +87,10 @@
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
     <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\blog-single-sidebar.html" />
+    <Content Include="app\templates\app\cart.html" />
+    <Content Include="app\templates\app\checkout.html" />
+    <Content Include="app\templates\app\style.css" />
     <Content Include="app\templates\app\contact.html" />
     <Content Include="app\templates\app\index.html" />
     <Content Include="app\templates\app\layout.html" />
