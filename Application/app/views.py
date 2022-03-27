@@ -12,7 +12,7 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'index.html',
+        'layout.html',
         {
             'title':'Home Page',
             'year':datetime.now().year,
@@ -20,13 +20,13 @@ def home(request):
     )
 
 def index(request):
-    """Renders the index page."""
+    """Renders the home page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
         'index.html',
         {
-            'title':'Home Page',
+            'title':'index Page',
             'year':datetime.now().year,
         }
     )
