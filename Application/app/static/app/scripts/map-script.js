@@ -7,11 +7,11 @@ $(document).ready(function(){
 	var map;
 	map = new GMaps({
 		el: '#myMap',
-		lat: 51.507351,
-		lng: -0.127758,
-		scrollwheel:false,
+		lat: 38.75645,
+		lng: -9.15556,
+		scrollwheel:true,
 		zoom: 15,
-		zoomControl : false,
+		zoomControl : true,
 		panControl : false,
 		streetViewControl : true,
 		mapTypeControl: false,
@@ -19,10 +19,10 @@ $(document).ready(function(){
 		clickable: false
 	});
 
-	var image = 'images/map-marker.png';
+	var image = '../static/app/img/map-marker.png';
 	map.addMarker({
-		lat: 51.507351,
-		lng: -0.127758,
+		lat: 38.75645,
+		lng: -9.15556,
 		icon: image,
 		animation: google.maps.Animation.DROP,
 		verticalAlign: 'bottom',
@@ -35,7 +35,7 @@ $(document).ready(function(){
 		{
 			"featureType": "road",
 			"stylers": [
-				{ "color": "#ffffff" }
+				{ "color": "#333" }
 			]
 		},{
 			"featureType": "water",

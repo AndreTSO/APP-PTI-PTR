@@ -403,7 +403,7 @@ Version:1.0
 	display:none;
 }
 .slicknav_nav li:hover a{
-	color:#F7941D;
+	color:#42912a;
 	background:transparent;
 }
 .slicknav_nav li:hover{
@@ -417,7 +417,7 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
-	color:#F7941D;
+	color:#42912a;
 	background:transparent;
 }
 .slicknav_nav li .slicknav_item{
@@ -433,12 +433,12 @@ Version:1.0
 	padding-bottom:0px;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #F7941D;
+	background-color: #42912a;
 	box-shadow: none;
 	text-shadow: none;
 }
 .slicknav_nav .slicknav_arrow{
-	color:#F7941D;
+	color:#42912a;
 }
 .slicknav_menu .slicknav_icon-bar {
 	display: block;
@@ -884,7 +884,7 @@ Version:1.0
 	width: 50%;
 	height: 100%;
 	border-bottom: 1px solid #e6ebee;
-	background: #F7941D;
+	background: #42912a;
 	color: #fff;
 	border: none;
 }
@@ -1116,7 +1116,7 @@ Version:1.0
 	display:none;
 }
 .slicknav_nav li:hover a{
-	color:#F7941D;
+	color:#42912a;
 	background:transparent;
 }
 .slicknav_nav li:hover{
@@ -1130,7 +1130,7 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
-	color:#F7941D;
+	color:#42912a;
 	background:transparent;
 }
 .slicknav_nav li .slicknav_item{
@@ -1146,12 +1146,12 @@ Version:1.0
 	padding-bottom:0px;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #F7941D;
+	background-color: #42912a;
 	box-shadow: none;
 	text-shadow: none;
 }
 .slicknav_nav .slicknav_arrow{
-	color:#F7941D;
+	color:#42912a;
 }
 .slicknav_menu .slicknav_icon-bar {
 	display: block;
@@ -1454,7 +1454,7 @@ Version:1.0
 }
 .shop .nice-select {
 	width: 100%;
-	display: ;
+
 	margin-top: 4px;
 }
 .shop .view-mode {
@@ -1473,7 +1473,7 @@ Version:1.0
 	width: 100%;
 	display: block;
 	display: inline-block;
-	display: ;
+
 }
 .shop .view-mode li a {
 	width: 80px;
