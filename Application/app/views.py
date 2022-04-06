@@ -44,6 +44,32 @@ def contact(request):
         }
     )
 
+def cart(request):
+    """Renders the cart page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'cart.html',
+        {
+            'title':'Cart',
+            'message':'Shopping cart',
+            'year':datetime.now().year,
+        }
+    )
+
+def checkout(request):
+    """Renders the checkout page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'checkout.html',
+        {
+            'title':'Checkout',
+            'message':'Your checkout page',
+            'year':datetime.now().year,
+        }
+    )    
+
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
