@@ -1,10 +1,4 @@
-/* =====================================
-Template Name: Eshop
-Author Name: Naimur Rahman
-Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
-Version:1.0
-========================================*/
+
 /*======================================
 [ CSS Table of contents ]
 01. Preloader CSS
@@ -93,7 +87,7 @@ Version:1.0
 	cursor:pointer;
 }
 .color-plate span.color1{
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -161,7 +155,7 @@ Version:1.0
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background:#69C14F
+  background:#42912a
   ;
   -webkit-animation: preloader-fx 1.6s linear infinite;
   animation: preloader-fx 1.6s linear infinite;
@@ -198,7 +192,7 @@ Version:1.0
 }
 .btn:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	;
 }
 #scrollUp {
@@ -223,7 +217,7 @@ Version:1.0
 	box-shadow: 0px 4px 19px #00000038;
 }
 #scrollUp i:hover{
-	background:#69C14F
+	background:#42912a
 	;
 	color:#fff;
 }
@@ -253,7 +247,7 @@ Version:1.0
 }
 .header.v3 .navbar-expand-lg .navbar-collapse{
 	display:block !important;
-	background:rgb(143, 47, 47);
+	background:#333;
 }
 .header .nav li a i {
 	margin-left: 6px;
@@ -305,7 +299,7 @@ Version:1.0
 }
 .header .nav li .dropdown li:hover a{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	;
 }
 .header .nav li .dropdown li a:hover{
@@ -355,7 +349,7 @@ Version:1.0
 }
 .header .nav li .dropdown li .dropdown.sub-dropdown li a:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	;
 }
 .header .nav li .dropdown.sub-dropdown li:last-child a{
@@ -382,7 +376,7 @@ Version:1.0
 	color: #ccc;
 }
 .header.shop .topbar .login a {
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
@@ -397,7 +391,7 @@ Version:1.0
 	display: inline-block;
 	margin-right: 4px;
 	font-size: 15px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	position: relative;
@@ -418,7 +412,7 @@ Version:1.0
 	display: inline-block;
 	margin-right: 4px;
 	font-size: 15px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	position: relative;
@@ -432,7 +426,7 @@ Version:1.0
 	color:#333;
 }
 .header.shop .list-main li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -449,7 +443,7 @@ Version:1.0
 	margin: 0 !important;
 }
 .header.shop .nav li .new {
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -466,7 +460,7 @@ Version:1.0
 	content: "";
 	left: 4px;
 	bottom: -8px;
-	border: 4px solid #69C14F
+	border: 4px solid #42912a
 	
 	;
 	border-bottom-color: transparent;
@@ -527,7 +521,7 @@ Version:1.0
 	font-weight: 600;
 }
 .header .shopping .dropdown-cart-header a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -586,7 +580,7 @@ Version:1.0
 	color: #333;
 }
 .header .shopping-list h4 a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -621,7 +615,7 @@ Version:1.0
 	font-weight: 500;
 }
 .header .shopping-item .bottom .btn:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -710,7 +704,7 @@ Version:1.0
 	font-weight: 400;
 }
 .header.shop .nice-select .list li:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -750,7 +744,7 @@ Version:1.0
 }
 .header.shop .search-bar .btnn:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -797,7 +791,7 @@ Version:1.0
 	color: #fff;
 	background: transparent;
 	position: relative;
-	background: #69C14F
+	background: #42912a
 	
 	;
 }
@@ -836,7 +830,7 @@ Version:1.0
 .header.shop .main-category li a {
 	font-size: 14px;
 	font-weight: 600;
-	color: rgb(110, 58, 58);
+	color: #333;
 	padding: 13px 25px 13px 25px;
 	display: block;
 	text-transform: uppercase;
@@ -857,7 +851,7 @@ Version:1.0
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-	border-left: 3px solid #69C14F
+	border-left: 3px solid #42912a
 	
 	;
 	-webkit-box-shadow: 0px 5px 15px #0000000a;
@@ -881,7 +875,7 @@ Version:1.0
 	font-weight:400;
 }
 .header.shop .main-category li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -899,7 +893,7 @@ Version:1.0
 	background: #fff;
 	border: none;
 	padding: 30px;
-	border-left: 3px solid #69C14F
+	border-left: 3px solid #42912a
 	
 	;
 	opacity:0;
@@ -936,7 +930,7 @@ Version:1.0
 }
 .header.shop .main-category li .mega-menu .single-menu .title-link {
 	margin-bottom: 20px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -956,7 +950,7 @@ Version:1.0
 	margin-bottom:10px;
 }
 .header.shop .main-category li .mega-menu .single-menu .inner-link a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	background:transparent;
@@ -983,7 +977,7 @@ Version:1.0
 	margin-right:0;
 }
 .header.shop .nav li .new {
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -1015,19 +1009,19 @@ Version:1.0
 }
 .header.shop .nav li:hover a{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
 .header.shop.v2 .nav li:hover a{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	background:transparent;
 }
 .header.shop .nav li.active a{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -1036,7 +1030,7 @@ Version:1.0
 	background:transparent !important;
 }
 .header.shop.v2 .nav li.active a{
-	color:#69C14F
+	color:#42912a
 	
 	 !important;
 }
@@ -1044,7 +1038,7 @@ Version:1.0
 	margin:0;
 }
 .header.shop .nav li .dropdown li:hover a{
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -1053,7 +1047,7 @@ Version:1.0
 }
 .header.shop.v2 .nav li.active .dropdown li a:hover{
 	color:#fff !important;
-	background:#69C14F
+	background:#42912a
 	
 	 !important;
 }
@@ -1061,7 +1055,7 @@ Version:1.0
 	color:#fff !important;
 }
 .header.shop.v2 .nav li .dropdown li:hover a{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1084,12 +1078,12 @@ Version:1.0
 }
 .header.shop.v2 .nav li .dropdown li a:hover{
 	color:#fff !important;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
 .header.shop .nav li .dropdown li .dropdown.sub-dropdown li a:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -1105,7 +1099,7 @@ Version:1.0
 	transform: translateY(3px);
 }
 .header.shop .right-bar .sinlge-bar.top-search a:hover {
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1115,7 +1109,7 @@ Version:1.0
 	position:relative;
 }
 .header.shop .right-bar .sinlge-bar .single-icon:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1123,7 +1117,7 @@ Version:1.0
 	position: absolute;
 	top: -7px;
 	right: -8px;
-	background: #69C14F;
+	background: #42912a;
 	width: 18px;
 	height: 18px;
 	line-height: 18px;
@@ -1140,7 +1134,7 @@ Version:1.0
 	margin-right:0px;
 }
 .header.shop .right-bar .sinlge-bar li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1156,7 +1150,7 @@ Version:1.0
 	font-size:17px;
 }
 .header .search-top a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1217,7 +1211,7 @@ Version:1.0
 }
 .header .search-form button:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 	border-color:transparent;
@@ -1244,7 +1238,7 @@ Version:1.0
 	visibility:visible;
 }
 .header.sticky .header-inner .nav li a {
-	color: rgb(152, 56, 56);
+	color: #333;
 }
 .header.sticky.v3 .header-inner .nav li a {
 	color: #fff;
@@ -1253,15 +1247,15 @@ Version:1.0
 	color:#fff;
 }
 .header.sticky.v2 .header-inner .nav li:hover a{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
 .header.sticky .header-inner .nav li .dropdown li a{
-	color:rgb(146, 54, 54);
+	color:#333;
 }
 .header.sticky.v2 .header-inner .nav li .dropdown li a{
-	color:rgb(164, 59, 59);
+	color:#333;
 }
 .header.sticky .header-inner .nav li .dropdown li a:hover{
 	color:#fff;
@@ -1319,7 +1313,7 @@ Version:1.0
 	line-height: 50px;
 	font-size: 47px;
 	font-weight: 700;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	margin-bottom: 20px;
@@ -1349,7 +1343,7 @@ Version:1.0
 	z-index: 0;
 }
 .hero-slider .hero-text .btn:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -1359,7 +1353,7 @@ Version:1.0
 	position:relative;
 }
 .hero-area2 .single-slider.overlay:before{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	opacity:0;
@@ -1454,7 +1448,7 @@ Version:1.0
 	border-radius: 0;
 }
 .hero-area2 .owl-carousel .owl-nav div:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -1491,7 +1485,7 @@ Version:1.0
 	line-height: 37px;
 }
 .hero-area3 .big-content .title span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1532,7 +1526,7 @@ Version:1.0
 	text-transform: capitalize;
 }
 .hero-area3 .small-content .title span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1549,10 +1543,10 @@ Version:1.0
 	font-size: 13px;
 }
 .hero-area3 .small-content .button .btn:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
-	border-color:#69C14F
+	border-color:#42912a
 	
 	;
 }
@@ -1581,7 +1575,7 @@ Version:1.0
 	line-height: 35px;
 }
 .hero-area4 .big-content .title span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -1617,7 +1611,7 @@ Version:1.0
 	border-radius: 0;
 }
 .hero-area4 .owl-carousel .owl-nav div:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -1665,13 +1659,13 @@ Version:1.0
 	color: #333;
 }
 .small-banner .single-banner h3 span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
 .small-banner .single-banner p {
 	font-size: 14px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	font-weight: 500;
@@ -1689,10 +1683,10 @@ Version:1.0
 	border-bottom:2px solid #333;
 }
 .small-banner .single-banner a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
-	border-color:#69C14F
+	border-color:#42912a
 	
 	;
 }
@@ -1731,13 +1725,13 @@ Version:1.0
 	line-height: 30px;
 }
 .midium-banner .single-banner h3 span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
 .midium-banner .single-banner p {
 	font-size: 13px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	font-weight: 500;
@@ -1763,7 +1757,7 @@ Version:1.0
 	text-transform: uppercase;
 }
 .midium-banner .single-banner a:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -1816,7 +1810,7 @@ Version:1.0
 }
 .most-popular .owl-carousel .owl-nav div:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -1864,7 +1858,7 @@ Version:1.0
 }
 .product-area .nav-tabs li a.active,
 .product-area .nav-tabs li:hover a{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -1975,7 +1969,7 @@ Version:1.0
 .single-product .product-img .product-action a span {
 	visibility: hidden;
 	position: absolute;
-	background: #69C14F
+	background: #42912a
 	
 	 !important;
 	color: #fff !important;
@@ -2001,7 +1995,7 @@ Version:1.0
 	content: "";
 	right: 0;
 	bottom: -12px;
-	border: 6px solid #69C14F
+	border: 6px solid #42912a
 	
 	;
 	border-left:0px solid transparent;
@@ -2009,7 +2003,7 @@ Version:1.0
 	border-bottom:6px solid transparent;
 }
 .single-product .product-img .product-action a:hover {
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2053,7 +2047,7 @@ Version:1.0
 	display: inline-block;
 }
 .single-product .product-img .product-action-2 a:hover {
-  color:#69C14F
+  color:#42912a
   
   ;
 }
@@ -2141,7 +2135,7 @@ Version:1.0
 	margin: 0;
 }
 .single-product .product-content h3 a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2191,10 +2185,10 @@ Version:1.0
 	box-shadow: none;
 	border: none;
 	height: 4px;
-	background: #69C14F
+	background: #42912a
 	
 	;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	border-radius: 0px;
@@ -2222,10 +2216,10 @@ Version:1.0
 	color:#282828;
 }
 .shop .range .ui-slider-handle.ui-state-default.ui-corner-all {
-	background: #69C14F
+	background: #42912a
 	
 	;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	cursor:pointer;
@@ -2285,7 +2279,7 @@ Version:1.0
 	text-transform: capitalize;
 }
 .shop-sidebar .categor-list li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2325,7 +2319,7 @@ Version:1.0
 	display: block;
 }
 .shop-sidebar .single-post .content h5 a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2344,7 +2338,7 @@ Version:1.0
 	color:#999;
 }
 .shop-sidebar .single-post .reviews li.yellow i{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2395,7 +2389,7 @@ Version:1.0
 	border-radius:0px;
 }
 .shop .nice-select .list li:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -2423,7 +2417,7 @@ Version:1.0
 }
 .shop .view-mode li.active a,
 .shop .view-mode li:hover a {
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color:#fff;
@@ -2465,7 +2459,7 @@ Version:1.0
 	border:1px solid transparent;
 }
 .shop.single .flex-control-thumbs li img.flex-active{
-	border-color:#69C14F
+	border-color:#42912a
 	
 	;
 }
@@ -2497,7 +2491,7 @@ Version:1.0
 	display:inline-block;
 }
 .shop.single .product-des .total-review:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2509,7 +2503,7 @@ Version:1.0
 	display:inline-block;
 }
 .shop.single .product-des .rating li i{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2528,7 +2522,7 @@ Version:1.0
 .shop.single .product-des .price span{
 	display:inline-block;
 	margin-right:15px;
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2585,7 +2579,7 @@ Version:1.0
 	background:#3498db;
 }
 .shop.single .product-des .color ul li .two{
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -2626,7 +2620,7 @@ Version:1.0
 	font-size: 14px;
 }
 .shop.single .product-des .size ul li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2672,7 +2666,7 @@ Version:1.0
 	border: none;
 }
 .shop.single .quantity .button .btn:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2704,7 +2698,7 @@ Version:1.0
 }
 .shop.single .add-to-cart .btn:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -2726,7 +2720,7 @@ Version:1.0
 	margin-left:10px;
 }
 .shop.single .cat a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -2763,7 +2757,7 @@ Version:1.0
 }
 .shop.single .nav-tabs li a.active,
 .shop.single .nav-tabs li:hover a{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -2796,7 +2790,7 @@ Version:1.0
 	top: 9px;
 	height: 7px;
 	width: 7px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	border-radius: 50%;
@@ -2861,7 +2855,7 @@ Version:1.0
 	display:inline-block;
 }
 .shop.single .ratting-main .single-rating ul li i{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	font-size:14px;
@@ -2915,7 +2909,7 @@ Version:1.0
 	display:inline-block;
 }
 .shop.single .comment-review .rating li i{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	font-size: 14px;
@@ -2996,7 +2990,7 @@ Version:1.0
 	content: "";
 	height: 2px;
 	width: 50px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	left: 0;
@@ -3030,7 +3024,7 @@ Version:1.0
 	line-height:40px;
 	font-size:14px;
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 	border-radius:100%;
@@ -3079,14 +3073,14 @@ Version:1.0
 	color: #333;
 }
 .shop-home-list .single-list .content a:hover{
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
 .shop-home-list .single-list .content .price {
 	margin-top: 15px;
 	font-weight: 500;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	display: inline-block;
@@ -3114,7 +3108,7 @@ Version:1.0
 	padding:0px 50px;
 }
 .shopping-summery thead {
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -3126,7 +3120,7 @@ Version:1.0
 	text-align: center;
 }
 .shopping-summery tbody tr {
-	border-bottom: 1px solid #69C14F
+	border-bottom: 1px solid #42912a
 	
 	;
 	margin-top: 20px;
@@ -3150,7 +3144,7 @@ Version:1.0
 	color: #666;
 }
 .shopping-summery tbody .product-name a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3162,7 +3156,7 @@ Version:1.0
 	padding: 4px;
 }
 .shopping-summery tbody .product:hover img{
-	border-color:#69C14F
+	border-color:#42912a
 	
 	;
 	-webkit-transform:rotate(360deg);
@@ -3215,7 +3209,7 @@ Version:1.0
 	font-size: 12px;
 }
 .shopping-cart .qty .button .btn:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3236,7 +3230,7 @@ Version:1.0
 	text-align: center;
 }
 .shopping-summery tbody .action a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3267,7 +3261,7 @@ Version:1.0
 }
 .shopping-cart .total-amount .left .coupon form .btn:hover{
 	background:#fff;
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3492,7 +3486,7 @@ Version:1.0
 	bottom:0;
 	height:2px;
 	width:50px;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -3622,7 +3616,7 @@ Version:1.0
 	bottom:0;
 	height:2px;
 	width:50px;
-	background:#69C14F
+	background:#42912a
 	
 	;
 	margin-left:-25px;
@@ -3681,7 +3675,7 @@ Version:1.0
 	line-height: 20px;
 }
 .shop.login .form .btn:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -3746,7 +3740,7 @@ Version:1.0
 	font-weight:400;
 }
 .shop.login .login-form .lost-pass:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3771,7 +3765,7 @@ Version:1.0
 	line-height: 20px;
 }
 .shop-list .list-content .title a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -3786,7 +3780,7 @@ Version:1.0
 	display:inline-block;
 }
 .shop-list .list-content .rating li i{
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
@@ -3810,7 +3804,7 @@ Version:1.0
 	padding: 13px 32px;
 }
 .shop-list .list-content .btn:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -3843,7 +3837,7 @@ Version:1.0
 }
 .pagination .pagination-list li.active a,
 .pagination .pagination-list li:hover a{
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -3910,7 +3904,7 @@ Version:1.0
 	margin-top: 35px;
 	font-size: 35px;
 	font-weight: 700;
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
@@ -4017,7 +4011,7 @@ Version:1.0
 	margin-bottom:30px;
 }
 .shop-newsletter .inner p span{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4051,7 +4045,7 @@ Version:1.0
 	padding: 10px 30px;
 	position: relative;
 	top: 0;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -4103,14 +4097,14 @@ Version:1.0
 	bottom: -1px;
 	height: 2px;
 	width: 60px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 }
 .about-us .about-content h3 span{
 	display:inline-block;
 	font-weight:700;
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4130,13 +4124,13 @@ Version:1.0
 	margin-right:15px;
 }
 .about-us .about-content .button .btn:hover{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
 }
 .about-us .about-content .button .btn.primary{
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -4170,7 +4164,7 @@ Version:1.0
 	height: 64px;
 	width: 64px;
 	line-height: 64px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -4191,7 +4185,7 @@ Version:1.0
 }
 .about-us .about-img .video:hover{
 	background:#fff;
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4268,7 +4262,7 @@ Version:1.0
 	font-size: 14px;
 }
 .team .single-team .social-links .social li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4304,7 +4298,7 @@ Version:1.0
 	color: #333;
 }
 .shop-blog .shop-single-blog .content .title:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4322,7 +4316,7 @@ Version:1.0
 	display: block;
 }
 .shop-blog .shop-single-blog .content .more-btn:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4372,7 +4366,7 @@ Version:1.0
 	bottom: -1px;
 	height: 100%;
 	width: 3px;
-	background: #69C14F
+	background: #42912a
 	
 	;
 }
@@ -4417,7 +4411,7 @@ Version:1.0
 	transition: all 0.4s ease;
 }
 .main-sidebar .search .button:hover {
-	background:#69C14F
+	background:#42912a
 	
 	;
 	color:#fff;
@@ -4441,7 +4435,7 @@ Version:1.0
 	font-size:14px;
 }
 .main-sidebar .categor-list li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	padding-left:7px;
@@ -4500,7 +4494,7 @@ Version:1.0
 	margin-top: 0;
 }
 .main-sidebar .single-post .content h5 a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4540,7 +4534,7 @@ Version:1.0
 }
 .main-sidebar .side-tags .tag a:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 	border-color:transparent;
@@ -4583,7 +4577,7 @@ Version:1.0
 .main-sidebar .newsletter .letter-inner .form-inner a {
 	height: 42px;
 	width: 100%;
-	background: #69C14F
+	background: #42912a
 	
 	;
 	color: #fff;
@@ -4632,7 +4626,7 @@ Version:1.0
 	margin-bottom: 25px;
 }
 .blog-single .blog-meta .author i {
-	color: #69C14F
+	color: #42912a
 	
 	;
 	margin-right: 10px;
@@ -4657,12 +4651,12 @@ Version:1.0
 }
 .blog-single .blog-meta span a i {
 	margin-right: 10px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
 .blog-single .blog-meta span a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4684,13 +4678,13 @@ Version:1.0
 	color: #555;
 	border: none;
 	margin-bottom: 25px;
-	border-left: 3px solid #69C14F
+	border-left: 3px solid #42912a
 	
 	;
 }
 .blog-single blockquote i {
 	font-size: 30px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	position: absolute;
@@ -4732,7 +4726,7 @@ Version:1.0
 }
 .blog-single .share-social .content-tags .tag-inner li a:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -4757,7 +4751,7 @@ Version:1.0
 	bottom: -1px;
 	height: 100%;
 	width: 3px;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -4827,7 +4821,7 @@ Version:1.0
 	margin-right:5px;
 }
 .blog-single .single-comment .content a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -4853,7 +4847,7 @@ Version:1.0
 	bottom: -1px;
 	height: 100%;
 	width: 3px;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -4919,7 +4913,7 @@ Version:1.0
 	font-size: 17px;
 	font-weight: 500;
 	margin-bottom: 5px;
-	color: #69C14F
+	color: #42912a
 	
 	;
 }
@@ -4948,7 +4942,7 @@ Version:1.0
 	text-align: center;
 	border-radius: 3px;
 	line-height: 40px;
-	background:#69C14F
+	background:#42912a
 	
 	;
 }
@@ -4963,7 +4957,7 @@ Version:1.0
 	font-weight:400;
 }
 .contact-us .single-info ul li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
@@ -5034,7 +5028,7 @@ Version:1.0
 	margin-bottom: 10px;
 	display: block;
 	font-weight: 600;
-	color: #69C14F
+	color: #42912a
 	
 	;
 	text-transform: uppercase;
@@ -5071,7 +5065,7 @@ Version:1.0
 	text-align: center;
 }
 .error-page .error-inner h2 {
-	color: #69C14F
+	color: #42912a
 	
 	;
 	margin-bottom: 0;
@@ -5113,7 +5107,7 @@ Version:1.0
 }
 .error-page .button .btn:hover{
 	color:#fff;
-	background:#69C14F
+	background:#42912a
 	
 	;
 	border-color:transparent;
@@ -5126,7 +5120,7 @@ Version:1.0
   position: relative;
   background: #333;
   text-align: center;
-  background-color: #69C14F
+  background-color: #42912a
   
   ;
   margin-bottom:100px;
@@ -5195,7 +5189,7 @@ Version:1.0
 	display: block;
 }
 .footer .about .call a {
-	color: #69C14F
+	color: #42912a
 	
 	;
 	font-size: 20px;
@@ -5214,7 +5208,7 @@ Version:1.0
 	font-weight: 400;
 }
 .footer .links ul li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 	padding-left:10px;
@@ -5247,7 +5241,7 @@ Version:1.0
 	font-size:16px;
 }
 .footer .social ul li a:hover{
-	color:#69C14F
+	color:#42912a
 	
 	;
 }
