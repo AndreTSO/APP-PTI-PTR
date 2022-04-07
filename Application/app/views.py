@@ -18,6 +18,18 @@ def home(request):
             'year':datetime.now().year,
         }
     )
+    
+def layout(request):
+    """Renders the home page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'layout.html',
+        {
+            'title':'Home Page',
+            'year':datetime.now().year,
+        }
+    )
 
 def index(request):
     """Renders the home page."""
