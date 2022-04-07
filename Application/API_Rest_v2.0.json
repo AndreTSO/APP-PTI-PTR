@@ -45,7 +45,7 @@
     "/product": {
       "post": {
         "tags": [
-          "produc"
+          "product"
         ],
         "summary": "Add product",
         "description": "",
