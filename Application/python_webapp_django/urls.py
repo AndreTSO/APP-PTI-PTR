@@ -18,7 +18,7 @@ import app.views
 
 urlpatterns = [
     # Examples:
-    url(r'^$', app.views.home, name='home'),
+    url(r'^home', app.views.home, name='home'),
     url(r'^contact', app.views.contact, name='contact'),
     url(r'^cart', app.views.cart, name='cart'),
     url(r'^checkout', app.views.checkout, name='checkout'),
