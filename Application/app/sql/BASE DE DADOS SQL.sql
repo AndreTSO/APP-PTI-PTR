@@ -26,6 +26,96 @@ INSERT INTO ptr_estadosencomendas (idEstado, estado) VALUES
 (10, 'Reembolsado');
 
 
+-- ESTADOS FEITOS PELO LEO!!!!! ------------
+DROP TABLE IF EXISTS ptr_estadosproduto;
+CREATE TABLE IF NOT EXISTS ptr_estadosproduto (
+  idEstadoProduto int(11) NOT NULL AUTO_INCREMENT,
+  estadoProduto char(20) NOT NULL,
+  PRIMARY KEY (idEstadoProduto)
+)
+
+INSERT INTO ptr_estadosproduto (idEstadoProduto, estadoProduto) VALUES
+(1, 'Disponivel em stock'),
+(2, 'Sem stock'),
+(3, 'Encomendado'),
+(4, 'Fora de prazo'),
+(5, 'Danificado'),
+(6, 'Em promoção'),
+(7, 'Descontinuado');
+
+
+DROP TABLE IF EXISTS ptr_estadosveiculo;
+CREATE TABLE IF NOT EXISTS ptr_estadosveiculo (
+  idEstadoVeiculo int(11) NOT NULL AUTO_INCREMENT,
+  estadoVeiculo char(20) NOT NULL,
+  PRIMARY KEY (idEstadoVeiculo)
+)
+
+INSERT INTO ptr_estadosveiculo (idEstadoVeiculo, estadoVeiculo) VALUES
+(1, 'Em serviço'),
+(2, 'Avariado'),
+(3, 'Disponivel');
+
+
+DROP TABLE IF EXISTS ptr_estadosservico;
+CREATE TABLE IF NOT EXISTS ptr_estadosservico (
+  idEstadoServico int(11) NOT NULL AUTO_INCREMENT,
+  estadoServico char(20) NOT NULL,
+  PRIMARY KEY (idEstadoServico)
+)
+
+INSERT INTO ptr_estadosservico (idEstadoServico, estadoServico) VALUES
+(1, 'Em transito'),
+(2, 'Entregue'),
+(3, 'Devolvido'),
+(4, 'Pendente'),
+(5, 'Para Entrega'),
+(6, 'Anulado');
+(6, 'Incidencia');
+
+
+DROP TABLE IF EXISTS ptr_estadosutilizadorregistado;
+CREATE TABLE IF NOT EXISTS ptr_estadosutilizadorregistado (
+  idEstadoUtilizadorRegistado int(11) NOT NULL AUTO_INCREMENT,
+  estadoUtilizadorRegistado char(20) NOT NULL,
+  PRIMARY KEY (idEstadoUtilizadorRegistado)
+)
+
+INSERT INTO ptr_estadosutilizadorregistado (idEstadoUtilizadorRegistado, estadoUtilizadorRegistado) VALUES
+(1, 'Inativo'),
+(2, 'Ativo'),
+(3, 'Bloqueado'),
+(4, 'Desativado');
+
+
+DROP TABLE IF EXISTS ptr_estadosArmazem;
+CREATE TABLE IF NOT EXISTS ptr_estadosArmazem (
+  idEstadoArmazem int(11) NOT NULL AUTO_INCREMENT,
+  estadoArmazem char(20) NOT NULL,
+  PRIMARY KEY (idEstadoArmazem)
+)
+
+INSERT INTO ptr_estadosArmazem (idEstadoArmazem, estadoArmazem) VALUES
+(1, 'Ativo'),
+(2, 'Encerrado'),
+(3, 'Indisponivel');
+
+
+DROP TABLE IF EXISTS ptr_estadosbasetransportador;
+CREATE TABLE IF NOT EXISTS ptr_estadosbasetransportador (
+  idEstadoBaseTransportador int(11) NOT NULL AUTO_INCREMENT,
+  estadoBaseTransportador char(20) NOT NULL,
+  PRIMARY KEY (idEstadoBaseTransportador)
+)
+
+INSERT INTO ptr_estadosbasetransportador (idEstadoBaseTransportador, estadoBaseTransportador) VALUES
+(1, 'Ativo'),
+(2, 'Encerrado'),
+(3, 'Indisponivel');
+
+
+
+
 DROP TABLE IF EXISTS ptr_district;
 CREATE TABLE IF NOT EXISTS districts (
   id tinyint(2) UNSIGNED NOT NULL,
@@ -443,7 +533,6 @@ CREATE TABLE IF NOT EXISTS ptr_fornecedor (
 )
 
 
-
 DROP TABLE IF EXISTS ptr_armazemFornecedor;
 CREATE TABLE IF NOT EXISTS ptr_armazemFornecedor (
   idArmazemFornecedor int(11) NOT NULL AUTO_INCREMENT,
@@ -461,7 +550,52 @@ CREATE TABLE IF NOT EXISTS ptr_armazemFornecedor (
   FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor)
 ) 
 
+DROP TABLE IF EXISTS ptr_produto;
+CREATE TABLE IF NOT EXISTS ptr_produto (
+  idProduto int(11) NOT NULL AUTO_INCREMENT,
+  idFornecedor int(11) NOT NULL,
+  nome char(200) NOT NULL,
+  descricao varchar(2000) NOT NULL,
+  tipo char(30) NOT NULL,
+  tags varchar(100) NOT NULL,
+  precoSemIva float NOT NULL,
+  recursosConsumidos float NOT NULL DEFAULT '0',
+  custoManutencao float NOT NULL DEFAULT '0',
+  estado char(25) NOT NULL,
+  tipoIVA tinyint(5) NOT NULL,
+  modoDeVenda int(11) NOT NULL,
+  pesoPorVenda float DEFAULT NULL,
+  arquivado tinyint(1) NOT NULL,
+  notasInternasAoFornecedor varchar(200) NOT NULL,
+  dataCriacaoTimeStamp date NOT NULL,
+  PRIMARY KEY (idProduto)
 
+  CONSTRAINT ptr_produto_ptr_armazemFornecedor
+  FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor)
+
+
+
+
+)
+
+DROP TABLE IF EXISTS ptr_produto_armazem;
+CREATE TABLE IF NOT EXISTS ptr_produto_armazem (
+  idline int(11) NOT NULL,
+  idProduto int(11) NOT NULL,
+  idArmazemFornecedor int(11) NOT NULL
+  validade date NOT NULL,
+  stock int(11) NOT NULL DEFAULT '0',
+  quantReservada int(11) NOT NULL,
+  disponivelApartirData date NOT NULL,
+  estado char(25) NOT NULL,
+
+  CONSTRAINT ptr_produto_armazem_ptr_idProduto
+  FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto)
+
+  CONSTRAINT ptr_produto_armazem_ptr_armazemFornecedor
+  FOREIGN KEY (idArmazemFornecedor) REFERENCES ptr_armazemFornecedor(idArmazemFornecedor)
+
+)
 
 
 
@@ -482,14 +616,14 @@ DROP TABLE IF EXISTS ptr_artigossubencomenda;
 CREATE TABLE IF NOT EXISTS ptr_artigossubencomenda (
   idArtigosSubEncomenda int(11) NOT NULL AUTO_INCREMENT,
   idSubEncomenda int(11) NOT NULL,
-  idArtigo int(11) NOT NULL,
+  idPodutoArmazem int(11) NOT NULL, -- referencia o id do produto e o armazem onde está
   nome char(120) NOT NULL,
   descricao char(250) NOT NULL,
   quantidade smallint(6) NOT NULL,
   valorArtigo float NOT NULL,
   poluicao float NOT NULL,
   PRIMARY KEY (idArtigosSubEncomenda)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) 
 
 
 
@@ -558,43 +692,6 @@ CREATE TABLE IF NOT EXISTS ptr_encomenda (
 
 
 
-DROP TABLE IF EXISTS ptr_estadosencomendas;
-CREATE TABLE IF NOT EXISTS ptr_estadosencomendas (
-  idEstado int(11) NOT NULL AUTO_INCREMENT,
-  estado char(20) NOT NULL,
-  PRIMARY KEY (idEstado)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
-
-INSERT INTO ptr_estadosencomendas (idEstado, estado) VALUES
-(1, 'Aguardar pagamento'),
-(2, 'Erro no pagamento'),
-(3, 'Pagamento aceite'),
-(4, 'Em preparação'),
-(5, 'Para recolha'),
-(6, 'Em trânsito'),
-(7, 'Cancelado'),
-(8, 'Entregue'),
-(9, 'Devolvido'),
-(10, 'Reembolsado');
-
-
-
-DROP TABLE IF EXISTS ptr_fornecedor;
-CREATE TABLE IF NOT EXISTS ptr_fornecedor (
-  idFornecedor int(11) NOT NULL AUTO_INCREMENT,
-  descricao text NOT NULL,
-  nomeEmpresa char(200) NOT NULL,
-  categoriaProdutos char(200) NOT NULL,
-  webSite char(200) NOT NULL,
-  PeriodoXDiasCancelar int(11) NOT NULL,
-  poluicaoGerada float NOT NULL,
-  registoSaida float NOT NULL,
-  ConsumoRecursos float NOT NULL,
-  PRIMARY KEY (idFornecedor)
-) 
-
-
 
 DROP TABLE IF EXISTS ptr_preferencias;
 CREATE TABLE IF NOT EXISTS ptr_preferencias (
@@ -605,30 +702,7 @@ CREATE TABLE IF NOT EXISTS ptr_preferencias (
 
 
 
-DROP TABLE IF EXISTS ptr_produto;
-CREATE TABLE IF NOT EXISTS ptr_produto (
-  idProduto int(11) NOT NULL AUTO_INCREMENT,
-  idFornecedor int(11) NOT NULL,
-  nome char(200) NOT NULL,
-  descricao varchar(2000) NOT NULL,
-  tipo char(30) NOT NULL,
-  tags varchar(100) NOT NULL,
-  precoSemIva float NOT NULL,
-  validade date NOT NULL,
-  recursosConsumidos float NOT NULL DEFAULT '0',
-  custoManutencao float NOT NULL DEFAULT '0',
-  stock int(11) NOT NULL DEFAULT '0',
-  quantReservada int(11) NOT NULL,
-  disponivelApartirData date NOT NULL,
-  estado varchar(25) NOT NULL,
-  tipoIVA tinyint(5) NOT NULL,
-  modoDeVenda int(11) NOT NULL,
-  pesoPorVenda float DEFAULT NULL,
-  arquivado tinyint(1) NOT NULL,
-  notasInternasAoFornecedor varchar(200) NOT NULL,
-  dataCriacaoTimeStamp date NOT NULL,
-  PRIMARY KEY (idProduto)
-)
+
 
 DROP TABLE IF EXISTS ptr_servico;
 CREATE TABLE IF NOT EXISTS ptr_servico (
