@@ -573,10 +573,35 @@ CREATE TABLE IF NOT EXISTS ptr_produto (
   CONSTRAINT ptr_produto_ptr_armazemFornecedor
   FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor)
 
+)
 
+DROP TABLE IF EXISTS ptr_img_produto
+CREATE TABLE IF NOT EXISTS ptr_img_produto(
+  idProduto int(11) NOT NULL 
+  idImagem int(11) NOT NULL
 
+  PRIMARY KEY (idProduto, idImagem)
+
+  CONSTRAINT ptr_img_produto_ptr_produto
+  FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto)
 
 )
+
+
+DROP TABLE IF EXISTS ptr_preferencias;
+CREATE TABLE IF NOT EXISTS ptr_preferencias (
+  idUser int(11) NOT NULL,
+  idArtigo int(11) NOT NULL,
+  PRIMARY KEY (idArtigo,idUser)
+
+  CONSTRAINT ptr_preferencias_ptr_userregistado
+  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif)
+
+  CONSTRAINT ptr_preferencias_ptr_produto
+  FOREIGN KEY (idUser) REFERENCES ptr_produto(idProduto)
+
+) 
+
 
 DROP TABLE IF EXISTS ptr_produto_armazem;
 CREATE TABLE IF NOT EXISTS ptr_produto_armazem (
@@ -597,16 +622,48 @@ CREATE TABLE IF NOT EXISTS ptr_produto_armazem (
 
 )
 
+DROP TABLE IF EXISTS ptr_cesto;
+CREATE TABLE IF NOT EXISTS ptr_cesto (
+  idLinha int(11) NOT NULL AUTO_INCREMENT,
+  idUser int(11) NOT NULL,
+  idArtigo int(11) NOT NULL,
+  quantidade int(11) NOT NULL,
+  PRIMARY KEY (idLinha)
+
+  CONSTRAINT ptr_cesto_ptr_userregistado
+  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif)
+
+  CONSTRAINT ptr_cesto_ptr_produto_armazem
+  FOREIGN KEY (idArtigo) REFERENCES ptr_produto_armazem(idline)
+
+)
 
 
+DROP TABLE IF EXISTS ptr_encomenda;
+CREATE TABLE IF NOT EXISTS ptr_encomenda (
+  idEncomenda int(11) NOT NULL AUTO_INCREMENT,
+  refEncomenda char(8) NOT NULL,
+  idCliente int(11) DEFAULT NULL,
+  nome char(20) NOT NULL,
+  sobreNome char(30) NOT NULL,
+  email char(255) NOT NULL,
+  telefone int(11) NOT NULL,
+  nif int(9) NULL,
+  morada char(255) NOT NULL,
+  codigoPostal char(8) NOT NULL,
+  distrito smallint(6) NOT NULL,
+  concelho smallint(6) NOT NULL,
+  dataEncomenda datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  estadoEncomenda int(11) NOT NULL,
+  poluiçaoTotalGerada float DEFAULT NULL,
+  mensagemAdicional varchar(400) DEFAULT NULL,
+  nomeFicheiroFatura int(11) DEFAULT NULL,
+  PRIMARY KEY (idEncomenda)
 
+  CONSTRAINT ptr_encomenda_ptr_userregistado
+  FOREIGN KEY (idCliente) REFERENCES ptr_userregistado(nif)
 
-
-
-
-
-
-
+) 
 
 
 
@@ -644,14 +701,6 @@ CREATE TABLE IF NOT EXISTS ptr_basestransportador (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS ptr_cesto;
-CREATE TABLE IF NOT EXISTS ptr_cesto (
-  idLinha int(11) NOT NULL AUTO_INCREMENT,
-  idUser int(11) NOT NULL,
-  idArtigo int(11) NOT NULL,
-  quantidade int(11) NOT NULL,
-  PRIMARY KEY (idLinha)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS ptr_comentariosreview;
@@ -668,37 +717,12 @@ CREATE TABLE IF NOT EXISTS ptr_comentariosreview (
 
 
 
-DROP TABLE IF EXISTS ptr_encomenda;
-CREATE TABLE IF NOT EXISTS ptr_encomenda (
-  idEncomenda int(11) NOT NULL AUTO_INCREMENT,
-  refEncomenda char(8) NOT NULL,
-  idCliente int(11) DEFAULT NULL,
-  nome char(20) NOT NULL,
-  sobreNome char(30) NOT NULL,
-  email char(255) NOT NULL,
-  telefone int(11) NOT NULL,
-  nif int(9) NOT NULL,
-  morada char(255) NOT NULL,
-  codigoPostal char(8) NOT NULL,
-  distrito smallint(6) NOT NULL,
-  concelho smallint(6) NOT NULL,
-  data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  estadoEncomenda int(11) NOT NULL,
-  poluiçaoTotalGerada float DEFAULT NULL,
-  mensagemAdicional varchar(400) DEFAULT NULL,
-  nomeFicheiroFatura int(11) DEFAULT NULL,
-  PRIMARY KEY (idEncomenda)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 
 
-DROP TABLE IF EXISTS ptr_preferencias;
-CREATE TABLE IF NOT EXISTS ptr_preferencias (
-  idUser int(11) NOT NULL,
-  idArtigo int(11) NOT NULL,
-  PRIMARY KEY (idArtigo,idUser)
-) 
+
+
 
 
 
