@@ -4,128 +4,72 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
--- ESTADOS 
-DROP TABLE IF EXISTS ptr_estadosencomendas;
-CREATE TABLE IF NOT EXISTS ptr_estadosencomendas (
-  idEstado int(11) NOT NULL AUTO_INCREMENT,
+
+DROP TABLE IF EXISTS ptr_estados;
+CREATE TABLE IF NOT EXISTS ptr_estados (
+  idEstado tinyint(2) UNSIGNED NOT NULL AUTO_INCREMENT,
+  tipo char(10) NOT NULL,
   estado char(20) NOT NULL,
   PRIMARY KEY (idEstado)
-)
+);
 
+INSERT INTO ptr_estados (idEstado, tipo ,estado) VALUES
+(1,'ENCOMENDA', 'Aguardar pagamento'),
+(2,'ENCOMENDA', 'Erro no pagamento'),
+(3,'ENCOMENDA', 'Pagamento aceite'),
+(4,'ENCOMENDA', 'Em preparação'),
+(5,'ENCOMENDA', 'Para recolha'),
+(6,'ENCOMENDA', 'Em trânsito'),
+(7,'ENCOMENDA', 'Cancelado'),
+(8,'ENCOMENDA', 'Entregue'),
+(9,'ENCOMENDA', 'Devolvido'),
+(10,'ENCOMENDA', 'Reembolsado'),
 
-INSERT INTO ptr_estadosencomendas (idEstado, estado) VALUES
-(1, 'Aguardar pagamento'),
-(2, 'Erro no pagamento'),
-(3, 'Pagamento aceite'),
-(4, 'Em preparação'),
-(5, 'Para recolha'),
-(6, 'Em trânsito'),
-(7, 'Cancelado'),
-(8, 'Entregue'),
-(9, 'Devolvido'),
-(10, 'Reembolsado');
+(11,'PRODUTO', 'Disponivel em stock'),
+(12,'PRODUTO', 'Sem stock'),
+(13,'PRODUTO', 'Encomendado'),
+(14,'PRODUTO', 'Fora de prazo'),
+(15,'PRODUTO', 'Danificado'),
+(16,'PRODUTO', 'Em promoção'),
+(17,'PRODUTO', 'Descontinuado'),
 
+(18,'COMENTARIO', 'Aprovado'),
+(19,'COMENTARIO', 'Desativado'),
 
--- ESTADOS FEITOS PELO LEO!!!!! ------------
-DROP TABLE IF EXISTS ptr_estadosproduto;
-CREATE TABLE IF NOT EXISTS ptr_estadosproduto (
-  idEstadoProduto int(11) NOT NULL AUTO_INCREMENT,
-  estadoProduto char(20) NOT NULL,
-  PRIMARY KEY (idEstadoProduto)
-)
+(20,'VEICULO', 'Em serviço'),
+(21,'VEICULO', 'Avariado'),
+(22,'VEICULO', 'Disponivel'),
 
-INSERT INTO ptr_estadosproduto (idEstadoProduto, estadoProduto) VALUES
-(1, 'Disponivel em stock'),
-(2, 'Sem stock'),
-(3, 'Encomendado'),
-(4, 'Fora de prazo'),
-(5, 'Danificado'),
-(6, 'Em promoção'),
-(7, 'Descontinuado');
+(23,'SERVICO', 'Em transito'),
+(24,'SERVICO', 'Entregue'),
+(25,'SERVICO', 'Devolvido'),
+(26,'SERVICO', 'Pendente'),
+(27,'SERVICO', 'Para Entrega'),
+(28,'SERVICO', 'Anulado'),
+(29,'SERVICO', 'Incidencia'),
 
+(30,'USER', 'Inativo'),
+(31,'USER', 'Ativo'),
+(32,'USER', 'Bloqueado'),
+(33,'USER', 'Desativado'),
 
-DROP TABLE IF EXISTS ptr_estadosveiculo;
-CREATE TABLE IF NOT EXISTS ptr_estadosveiculo (
-  idEstadoVeiculo int(11) NOT NULL AUTO_INCREMENT,
-  estadoVeiculo char(20) NOT NULL,
-  PRIMARY KEY (idEstadoVeiculo)
-)
-
-INSERT INTO ptr_estadosveiculo (idEstadoVeiculo, estadoVeiculo) VALUES
-(1, 'Em serviço'),
-(2, 'Avariado'),
-(3, 'Disponivel');
-
-
-DROP TABLE IF EXISTS ptr_estadosservico;
-CREATE TABLE IF NOT EXISTS ptr_estadosservico (
-  idEstadoServico int(11) NOT NULL AUTO_INCREMENT,
-  estadoServico char(20) NOT NULL,
-  PRIMARY KEY (idEstadoServico)
-)
-
-INSERT INTO ptr_estadosservico (idEstadoServico, estadoServico) VALUES
-(1, 'Em transito'),
-(2, 'Entregue'),
-(3, 'Devolvido'),
-(4, 'Pendente'),
-(5, 'Para Entrega'),
-(6, 'Anulado');
-(6, 'Incidencia');
-
-
-DROP TABLE IF EXISTS ptr_estadosutilizadorregistado;
-CREATE TABLE IF NOT EXISTS ptr_estadosutilizadorregistado (
-  idEstadoUtilizadorRegistado int(11) NOT NULL AUTO_INCREMENT,
-  estadoUtilizadorRegistado char(20) NOT NULL,
-  PRIMARY KEY (idEstadoUtilizadorRegistado)
-)
-
-INSERT INTO ptr_estadosutilizadorregistado (idEstadoUtilizadorRegistado, estadoUtilizadorRegistado) VALUES
-(1, 'Inativo'),
-(2, 'Ativo'),
-(3, 'Bloqueado'),
-(4, 'Desativado');
-
-
-DROP TABLE IF EXISTS ptr_estadosArmazem;
-CREATE TABLE IF NOT EXISTS ptr_estadosArmazem (
-  idEstadoArmazem int(11) NOT NULL AUTO_INCREMENT,
-  estadoArmazem char(20) NOT NULL,
-  PRIMARY KEY (idEstadoArmazem)
-)
-
-INSERT INTO ptr_estadosArmazem (idEstadoArmazem, estadoArmazem) VALUES
-(1, 'Ativo'),
-(2, 'Encerrado'),
-(3, 'Indisponivel');
-
-
-DROP TABLE IF EXISTS ptr_estadosbasetransportador;
-CREATE TABLE IF NOT EXISTS ptr_estadosbasetransportador (
-  idEstadoBaseTransportador int(11) NOT NULL AUTO_INCREMENT,
-  estadoBaseTransportador char(20) NOT NULL,
-  PRIMARY KEY (idEstadoBaseTransportador)
-)
-
-INSERT INTO ptr_estadosbasetransportador (idEstadoBaseTransportador, estadoBaseTransportador) VALUES
-(1, 'Ativo'),
-(2, 'Encerrado'),
-(3, 'Indisponivel');
+(34,'ARMAZEM', 'Ativo'),
+(35,'ARMAZEM', 'Encerrado'),
+(36,'ARMAZEM', 'Indisponivel');
 
 
 
 
 DROP TABLE IF EXISTS ptr_district;
-CREATE TABLE IF NOT EXISTS districts (
+CREATE TABLE IF NOT EXISTS ptr_district (
   id tinyint(2) UNSIGNED NOT NULL,
   name varchar(30) NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY uk_districts_name (name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ;
 
 
-INSERT INTO ptr_district (id, name) VALUES
+INSERT INTO ptr_district(id, name) VALUES
 (1, 'Aveiro'),
 (2, 'Beja'),
 (3, 'Braga'),
@@ -146,18 +90,17 @@ INSERT INTO ptr_district (id, name) VALUES
 (16, 'Viana do Castelo'),
 (17, 'Vila Real'),
 (18, 'Viseu');
-COMMIT;
 
 
 
 DROP TABLE IF EXISTS ptr_concelho;
-CREATE TABLE IF NOT EXISTS concelho (
+CREATE TABLE IF NOT EXISTS ptr_concelho (
   id smallint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   district tinyint(2) UNSIGNED NOT NULL,
   name varchar(60) NOT NULL,
   PRIMARY KEY (id),
   KEY fk_concelho_district (district)
-) 
+); 
 
 ALTER TABLE ptr_concelho
   ADD CONSTRAINT fk_concelho_district FOREIGN KEY (district) REFERENCES district (id);
@@ -474,13 +417,6 @@ INSERT INTO ptr_concelho (id, district, name) VALUES
 (308, 20, 'Vila Franca do Campo');
 
 
-
-
-
-
-
-
-
 DROP TABLE IF EXISTS ptr_userregistado;
 CREATE TABLE IF NOT EXISTS ptr_userregistado (
   nif int(11) NOT NULL AUTO_INCREMENT,
@@ -502,15 +438,17 @@ CREATE TABLE IF NOT EXISTS ptr_userregistado (
   termosEServicos tinyint(1) NOT NULL DEFAULT '0',
   observacoes text NOT NULL,
   anuncios tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (nif)
+  PRIMARY KEY (nif),
 
-  CONSTRAINT fk_ptr_userregistado_ptr_concelho ;
-  FOREIGN KEY (concelho) REFERENCES ptr_concelho (id)
+  CONSTRAINT fk_ptr_userregistado_ptr_concelho
+  FOREIGN KEY (concelho) REFERENCES ptr_concelho (id),
   
-  CONSTRAINT fk_ptr_userregistado_ptr_distrito
-  FOREIGN KEY (distrito) REFERENCES ptr_distrito (id);
+  CONSTRAINT fk_ptr_userregistado_ptr_district
+  FOREIGN KEY (distrito) REFERENCES ptr_district (id),
   
-)
+  CONSTRAINT fk_ptr_userregistado_ptr_estados
+  FOREIGN KEY (estadoConta) REFERENCES ptr_estados (idEstado)
+);
 
 
 
@@ -526,29 +464,41 @@ CREATE TABLE IF NOT EXISTS ptr_fornecedor (
   poluicaoGerada float NOT NULL,
   registoSaida float NOT NULL,
   ConsumoRecursos float NOT NULL,
-  PRIMARY KEY (idFornecedor)
+  PRIMARY KEY (idFornecedor),
 
   CONSTRAINT fk_ptr_fornecedor_ptr_userregistado
   FOREIGN KEY (idFornecedor) REFERENCES ptr_userregistado (nif)
-)
+);
 
 
-DROP TABLE IF EXISTS ptr_armazemFornecedor;
-CREATE TABLE IF NOT EXISTS ptr_armazemFornecedor (
+DROP TABLE IF EXISTS ptr_armazemfornecedor;
+CREATE TABLE IF NOT EXISTS ptr_armazemfornecedor (
   idArmazemFornecedor int(11) NOT NULL AUTO_INCREMENT,
   idFornecedor int(11) NOT NULL,
   nome char(50) NOT NULL,
   morada char(150) NOT NULL,
+  distrito smallint(6) NOT NULL,
+  concelho smallint(6) NOT NULL,
   codigoPostal char(8) NOT NULL,
   custoManutencao float NOT NULL DEFAULT '0',
   estado char(20) NOT NULL DEFAULT 'Ativo',
   referigeracao tinyint(1) NOT NULL DEFAULT '0',
   poluicaoGerada float NOT NULL DEFAULT '0',
-  PRIMARY KEY (idArmazemFornecedor)
+  PRIMARY KEY (idArmazemFornecedor),
 
   CONSTRAINT ptr_armazemFornecedor_ptr_armazemFornecedor
-  FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor)
-) 
+  FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor),
+
+  CONSTRAINT ptr_armazemFornecedor_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado),
+
+  CONSTRAINT ptr_armazemFornecedor_ptr_district
+  FOREIGN KEY (distrito) REFERENCES ptr_district(id),
+
+  CONSTRAINT ptr_armazemFornecedor_ptr_concelho
+  FOREIGN KEY (concelho) REFERENCES ptr_concelho(id)
+
+);
 
 DROP TABLE IF EXISTS ptr_produto;
 CREATE TABLE IF NOT EXISTS ptr_produto (
@@ -561,41 +511,67 @@ CREATE TABLE IF NOT EXISTS ptr_produto (
   precoSemIva float NOT NULL,
   recursosConsumidos float NOT NULL DEFAULT '0',
   custoManutencao float NOT NULL DEFAULT '0',
-  estado char(25) NOT NULL,
+  estado tinyint(2) UNSIGNED NOT NULL,
   tipoIVA tinyint(5) NOT NULL,
   modoDeVenda int(11) NOT NULL,
   pesoPorVenda float DEFAULT NULL,
   arquivado tinyint(1) NOT NULL,
   notasInternasAoFornecedor varchar(200) NOT NULL,
   dataCriacaoTimeStamp date NOT NULL,
-  PRIMARY KEY (idProduto)
+  PRIMARY KEY (idProduto),
 
   CONSTRAINT ptr_produto_ptr_armazemFornecedor
-  FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor)
+  FOREIGN KEY (idFornecedor) REFERENCES ptr_fornecedor(idFornecedor),
 
-)
+  CONSTRAINT ptr_produto_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
 
-DROP TABLE IF EXISTS ptr_img_produto
+);
+
+
+DROP TABLE IF EXISTS ptr_comentariosreview;
+CREATE TABLE IF NOT EXISTS ptr_comentariosreview (
+  idComentario int(11) NOT NULL AUTO_INCREMENT,
+  idUser int(11) NOT NULL,
+  idProduto int(11) NOT NULL,
+  comentario char(250) DEFAULT NULL,
+  estrelas int(11) NOT NULL,
+  estado char(20) NOT NULL,
+  data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (idComentario),
+
+  CONSTRAINT ptr_comentariosreview_ptr_userregistado
+  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif),
+
+  CONSTRAINT ptr_comentariosreview_ptr_produto
+  FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto),
+
+  CONSTRAINT ptr_comentariosreview_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
+);
+
+
+DROP TABLE IF EXISTS ptr_img_produto;
 CREATE TABLE IF NOT EXISTS ptr_img_produto(
-  idProduto int(11) NOT NULL 
-  idImagem int(11) NOT NULL
+  idProduto int(11) NOT NULL, 
+  idImagem int(11) NOT NULL,
 
-  PRIMARY KEY (idProduto, idImagem)
+  PRIMARY KEY (idProduto, idImagem),
 
   CONSTRAINT ptr_img_produto_ptr_produto
   FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto)
 
-)
+);
 
 
 DROP TABLE IF EXISTS ptr_preferencias;
 CREATE TABLE IF NOT EXISTS ptr_preferencias (
   idUser int(11) NOT NULL,
   idArtigo int(11) NOT NULL,
-  PRIMARY KEY (idArtigo,idUser)
+  PRIMARY KEY (idArtigo,idUser),
 
   CONSTRAINT ptr_preferencias_ptr_userregistado
-  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif)
+  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif),
 
   CONSTRAINT ptr_preferencias_ptr_produto
   FOREIGN KEY (idUser) REFERENCES ptr_produto(idProduto)
@@ -607,20 +583,22 @@ DROP TABLE IF EXISTS ptr_produto_armazem;
 CREATE TABLE IF NOT EXISTS ptr_produto_armazem (
   idline int(11) NOT NULL,
   idProduto int(11) NOT NULL,
-  idArmazemFornecedor int(11) NOT NULL
+  idArmazemFornecedor int(11) NOT NULL,
   validade date NOT NULL,
   stock int(11) NOT NULL DEFAULT '0',
   quantReservada int(11) NOT NULL,
   disponivelApartirData date NOT NULL,
-  estado char(25) NOT NULL,
+  estado tinyint(2) UNSIGNED NOT NULL,
 
   CONSTRAINT ptr_produto_armazem_ptr_idProduto
-  FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto)
+  FOREIGN KEY (idProduto) REFERENCES ptr_produto(idProduto),
 
   CONSTRAINT ptr_produto_armazem_ptr_armazemFornecedor
-  FOREIGN KEY (idArmazemFornecedor) REFERENCES ptr_armazemFornecedor(idArmazemFornecedor)
+  FOREIGN KEY (idArmazemFornecedor) REFERENCES ptr_armazemFornecedor(idArmazemFornecedor),
 
-)
+  CONSTRAINT ptr_produto_armazem_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
+);
 
 DROP TABLE IF EXISTS ptr_cesto;
 CREATE TABLE IF NOT EXISTS ptr_cesto (
@@ -654,7 +632,7 @@ CREATE TABLE IF NOT EXISTS ptr_encomenda (
   distrito smallint(6) NOT NULL,
   concelho smallint(6) NOT NULL,
   dataEncomenda datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  estadoEncomenda int(11) NOT NULL,
+  estadoEncomenda tinyint(2) UNSIGNED NOT NULL,
   poluiçaoTotalGerada float DEFAULT NULL,
   mensagemAdicional varchar(400) DEFAULT NULL,
   nomeFicheiroFatura int(11) DEFAULT NULL,
@@ -663,9 +641,28 @@ CREATE TABLE IF NOT EXISTS ptr_encomenda (
   CONSTRAINT ptr_encomenda_ptr_userregistado
   FOREIGN KEY (idCliente) REFERENCES ptr_userregistado(nif)
 
+   CONSTRAINT ptr_encomenda_ptr_estados
+  FOREIGN KEY (estadoEncomenda) REFERENCES ptr_estados(idEstado)
+
 ) 
 
+DROP TABLE IF EXISTS ptr_subencomenda;
+CREATE TABLE IF NOT EXISTS ptr_subencomenda (
+  idSubEncomenda int(11) NOT NULL AUTO_INCREMENT,
+  idEncomendaPai int(11) NOT NULL, 
+  estadoSubEncomenda tinyint(2) UNSIGNED NOT NULL,
+  poluicaoGerada float NOT NULL,
+  idFornecedor int(11) NOT NULL,
+  PRIMARY KEY (idSubEncomenda),
+  UNIQUE KEY idSubEncomenda (idSubEncomenda)
 
+  CONSTRAINT ptr_subencomenda_ptr_encomenda
+  FOREIGN KEY (idEncomendaPai) REFERENCES ptr_encomenda(idEncomenda)
+
+  CONSTRAINT ptr_subencomenda_ptr_estados
+  FOREIGN KEY (estadoSubEncomenda) REFERENCES ptr_estados(idEstado)
+
+)
 
 
 
@@ -680,6 +677,38 @@ CREATE TABLE IF NOT EXISTS ptr_artigossubencomenda (
   valorArtigo float NOT NULL,
   poluicao float NOT NULL,
   PRIMARY KEY (idArtigosSubEncomenda)
+
+  CONSTRAINT ptr_artigossubencomenda_ptr_subencomenda
+  FOREIGN KEY (idSubEncomenda) REFERENCES ptr_subencomenda(idSubEncomenda);
+
+  CONSTRAINT ptr_artigossubencomenda_ptr_produto_armazem
+  FOREIGN KEY (idPodutoArmazem) REFERENCES ptr_produto_armazem(idline);
+) 
+
+
+
+DROP TABLE IF EXISTS ptr_transportador;
+CREATE TABLE IF NOT EXISTS ptr_transportador (
+  idUserNif int(11) NOT NULL AUTO_INCREMENT,
+  nomeEmpresa char(100) NOT NULL,
+  nomeRepresentante char(30) NOT NULL,
+  sedeMorada char(120) NOT NULL,
+  sedeCodigoPostal char(8) NOT NULL,
+  distrito smallint(6) NOT NULL,
+  concelho smallint(6) NOT NULL,
+  contacto int(11) NOT NULL,
+  garantiaEntregaXHoras int(11) NOT NULL,
+  website char(50) NOT NULL,
+  PRIMARY KEY (idUserNif)
+
+  CONSTRAINT ptr_transportador_ptr_userregistado
+  FOREIGN KEY (idUserNif) REFERENCES ptr_userregistado(nif);
+
+  CONSTRAINT ptr_transportador_ptr_district
+  FOREIGN KEY (distrito) REFERENCES ptr_district(id);
+
+  CONSTRAINT ptr_transportador_ptr_concelho
+  FOREIGN KEY (concelho) REFERENCES ptr_concelho(id);
 ) 
 
 
@@ -695,37 +724,44 @@ CREATE TABLE IF NOT EXISTS ptr_basestransportador (
   codigoPostal char(8) NOT NULL,
   custoManutencao float NOT NULL,
   poluicaoGerada float NOT NULL,
-  estado char(20) NOT NULL,
+  estado tinyint(2) UNSIGNED NOT NULL,
   conselho smallint(6) NOT NULL,
   PRIMARY KEY (idBase,idTransportador)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+  CONSTRAINT ptr_transportador_ptr_userregistado
+  FOREIGN KEY (idUserNif) REFERENCES ptr_userregistado(nif);
+
+  CONSTRAINT ptr_basestransportador_ptr_transportador
+  FOREIGN KEY (idTransportador) REFERENCES ptr_transportador(idUserNif);
+
+  CONSTRAINT ptr_basestransportador_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
+) 
 
 
+DROP TABLE IF EXISTS ptr_veiculostransportador;
+CREATE TABLE IF NOT EXISTS ptr_veiculostransportador (
+  idVeiculo int(11) NOT NULL AUTO_INCREMENT,
+  idBaseTransportador int(11) NOT NULL,
+  matricula char(12) NOT NULL UNIQUE,
+  anoDoVeiculo date NOT NULL,
+  tipoVeiculo char(20) NOT NULL,
+  marca char(20) NOT NULL,
+  consumoPorCemKm float NOT NULL,
+  poluicaoPorCemKm float NOT NULL,
+  tipoDeCombustivel char(20) NOT NULL,
+  cargaMaxima float NOT NULL,
+  custoPorHora float NOT NULL,
+  estado tinyint(2) UNSIGNED NOT NULL,
+  frigorifico tinyint(1) NOT NULL,
+  PRIMARY KEY (idVeiculo)
 
+  CONSTRAINT ptr_veiculostransportador_ptr_basestransportador
+  FOREIGN KEY (idBaseTransportador) REFERENCES ptr_basestransportador(idBase)
 
-DROP TABLE IF EXISTS ptr_comentariosreview;
-CREATE TABLE IF NOT EXISTS ptr_comentariosreview (
-  idComentario int(11) NOT NULL AUTO_INCREMENT,
-  idUser int(11) NOT NULL,
-  idProduto int(11) NOT NULL,
-  comentario char(250) DEFAULT NULL,
-  estrelas int(11) NOT NULL,
-  estado char(20) NOT NULL,
-  data datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (idComentario)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-
-
-
-
-
-
-
-
-
-
-
+  CONSTRAINT ptr_veiculostransportador_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
+)
 
 
 DROP TABLE IF EXISTS ptr_servico;
@@ -735,7 +771,7 @@ CREATE TABLE IF NOT EXISTS ptr_servico (
   foiPago tinyint(1) NOT NULL DEFAULT '0',
   custoFrete int(11) NOT NULL,
   pesoDaCarga float NOT NULL,
-  estado int(11) NOT NULL,
+  estado tinyint(2) UNSIGNED NOT NULL,
   data date NOT NULL,
   moradaCarga char(150) NOT NULL,
   distritoCarga smallint(6) NOT NULL,
@@ -744,57 +780,10 @@ CREATE TABLE IF NOT EXISTS ptr_servico (
   distritoDescarga smallint(6) NOT NULL,
   conselhoDescarga smallint(6) NOT NULL,
   PRIMARY KEY (idServico)
+
+  CONSTRAINT ptr_servico_ptr_veiculostransportador
+  FOREIGN KEY (matriculaVeiculo) REFERENCES ptr_veiculostransportador(matricula)
+
+  CONSTRAINT ptr_servico_ptr_estados
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
 )
-
-
-DROP TABLE IF EXISTS ptr_subencomenda;
-CREATE TABLE IF NOT EXISTS ptr_subencomenda (
-  idSubEncomenda int(11) NOT NULL AUTO_INCREMENT,
-  idEncomendaPai int(11) NOT NULL,
-  estadoSubEncomenda int(11) NOT NULL,
-  poluicaoGerada float NOT NULL,
-  idFornecedor int(11) NOT NULL,
-  PRIMARY KEY (idSubEncomenda),
-  UNIQUE KEY idSubEncomenda (idSubEncomenda)
-)
-
-
-DROP TABLE IF EXISTS ptr_transportador;
-CREATE TABLE IF NOT EXISTS ptr_transportador (
-  idUserNif int(11) NOT NULL AUTO_INCREMENT,
-  nomeEmpresa char(100) NOT NULL,
-  nomeRepresentante char(30) NOT NULL,
-  sedeMorada char(120) NOT NULL,
-  sedeCodigoPostal char(8) NOT NULL,
-  localidade char(50) NOT NULL,
-  distrito char(20) NOT NULL,
-  contacto int(11) NOT NULL,
-  garantiaEntregaXHoras int(11) NOT NULL,
-  website char(50) NOT NULL,
-  PRIMARY KEY (idUserNif)
-) 
-
-
-
-
-
-
-DROP TABLE IF EXISTS ptr_veiculostransportador;
-CREATE TABLE IF NOT EXISTS ptr_veiculostransportador (
-  idVeiculo int(11) NOT NULL AUTO_INCREMENT,
-  idBaseTransportador int(11) NOT NULL,
-  matricula char(12) NOT NULL UNIQUE,
-  tipoVeiculo char(20) NOT NULL,
-  marca char(20) NOT NULL,
-  consumoPorCemKm float NOT NULL,
-  poluicaoPorCemKm float NOT NULL,
-  tipoDeCombustivel char(20) NOT NULL,
-  cargaMaxima float NOT NULL,
-  custoPorHora float NOT NULL,
-  estado char(20) NOT NULL,
-  frigorifico tinyint(1) NOT NULL,
-  anoDoVeiculo date NOT NULL,
-  PRIMARY KEY (idVeiculo)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-COMMIT;
-
