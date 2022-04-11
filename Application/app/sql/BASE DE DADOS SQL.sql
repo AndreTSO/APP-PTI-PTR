@@ -58,8 +58,6 @@ INSERT INTO ptr_estados (idEstado, tipo ,estado) VALUES
 (36,'ARMAZEM', 'Indisponivel');
 
 
-
-
 DROP TABLE IF EXISTS ptr_district;
 CREATE TABLE IF NOT EXISTS ptr_district (
   id tinyint(2) UNSIGNED NOT NULL,
@@ -419,7 +417,7 @@ INSERT INTO ptr_concelho (id, district, name) VALUES
 
 DROP TABLE IF EXISTS ptr_userregistado;
 CREATE TABLE IF NOT EXISTS ptr_userregistado (
-  nif int(11) NOT NULL AUTO_INCREMENT,
+  nif int(11) NOT NULL,
   nome char(20) NOT NULL,
   sobreNome char(30) NOT NULL,
   genero char(1) NOT NULL,
@@ -576,7 +574,7 @@ CREATE TABLE IF NOT EXISTS ptr_preferencias (
   CONSTRAINT ptr_preferencias_ptr_produto
   FOREIGN KEY (idUser) REFERENCES ptr_produto(idProduto)
 
-) 
+);
 
 
 DROP TABLE IF EXISTS ptr_produto_armazem;
@@ -606,15 +604,15 @@ CREATE TABLE IF NOT EXISTS ptr_cesto (
   idUser int(11) NOT NULL,
   idArtigo int(11) NOT NULL,
   quantidade int(11) NOT NULL,
-  PRIMARY KEY (idLinha)
+  PRIMARY KEY (idLinha),
 
   CONSTRAINT ptr_cesto_ptr_userregistado
-  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif)
+  FOREIGN KEY (idUser) REFERENCES ptr_userregistado(nif),
 
   CONSTRAINT ptr_cesto_ptr_produto_armazem
   FOREIGN KEY (idArtigo) REFERENCES ptr_produto_armazem(idline)
 
-)
+);
 
 
 DROP TABLE IF EXISTS ptr_encomenda;
@@ -633,18 +631,18 @@ CREATE TABLE IF NOT EXISTS ptr_encomenda (
   concelho smallint(6) NOT NULL,
   dataEncomenda datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   estadoEncomenda tinyint(2) UNSIGNED NOT NULL,
-  poluiçaoTotalGerada float DEFAULT NULL,
+  poluicaoTotalGerada float DEFAULT NULL,
   mensagemAdicional varchar(400) DEFAULT NULL,
   nomeFicheiroFatura int(11) DEFAULT NULL,
-  PRIMARY KEY (idEncomenda)
+  PRIMARY KEY (idEncomenda),
 
   CONSTRAINT ptr_encomenda_ptr_userregistado
-  FOREIGN KEY (idCliente) REFERENCES ptr_userregistado(nif)
+  FOREIGN KEY (idCliente) REFERENCES ptr_userregistado(nif),
 
    CONSTRAINT ptr_encomenda_ptr_estados
   FOREIGN KEY (estadoEncomenda) REFERENCES ptr_estados(idEstado)
 
-) 
+);
 
 DROP TABLE IF EXISTS ptr_subencomenda;
 CREATE TABLE IF NOT EXISTS ptr_subencomenda (
@@ -654,15 +652,15 @@ CREATE TABLE IF NOT EXISTS ptr_subencomenda (
   poluicaoGerada float NOT NULL,
   idFornecedor int(11) NOT NULL,
   PRIMARY KEY (idSubEncomenda),
-  UNIQUE KEY idSubEncomenda (idSubEncomenda)
+  UNIQUE KEY idSubEncomenda (idSubEncomenda),
 
   CONSTRAINT ptr_subencomenda_ptr_encomenda
-  FOREIGN KEY (idEncomendaPai) REFERENCES ptr_encomenda(idEncomenda)
+  FOREIGN KEY (idEncomendaPai) REFERENCES ptr_encomenda(idEncomenda),
 
   CONSTRAINT ptr_subencomenda_ptr_estados
   FOREIGN KEY (estadoSubEncomenda) REFERENCES ptr_estados(idEstado)
 
-)
+);
 
 
 
@@ -676,14 +674,14 @@ CREATE TABLE IF NOT EXISTS ptr_artigossubencomenda (
   quantidade smallint(6) NOT NULL,
   valorArtigo float NOT NULL,
   poluicao float NOT NULL,
-  PRIMARY KEY (idArtigosSubEncomenda)
+  PRIMARY KEY (idArtigosSubEncomenda),
 
   CONSTRAINT ptr_artigossubencomenda_ptr_subencomenda
-  FOREIGN KEY (idSubEncomenda) REFERENCES ptr_subencomenda(idSubEncomenda);
+  FOREIGN KEY (idSubEncomenda) REFERENCES ptr_subencomenda(idSubEncomenda),
 
   CONSTRAINT ptr_artigossubencomenda_ptr_produto_armazem
-  FOREIGN KEY (idPodutoArmazem) REFERENCES ptr_produto_armazem(idline);
-) 
+  FOREIGN KEY (idPodutoArmazem) REFERENCES ptr_produto_armazem(idline)
+);
 
 
 
@@ -699,17 +697,17 @@ CREATE TABLE IF NOT EXISTS ptr_transportador (
   contacto int(11) NOT NULL,
   garantiaEntregaXHoras int(11) NOT NULL,
   website char(50) NOT NULL,
-  PRIMARY KEY (idUserNif)
+  PRIMARY KEY (idUserNif),
 
   CONSTRAINT ptr_transportador_ptr_userregistado
-  FOREIGN KEY (idUserNif) REFERENCES ptr_userregistado(nif);
+  FOREIGN KEY (idUserNif) REFERENCES ptr_userregistado(nif),
 
   CONSTRAINT ptr_transportador_ptr_district
-  FOREIGN KEY (distrito) REFERENCES ptr_district(id);
+  FOREIGN KEY (distrito) REFERENCES ptr_district(id),
 
   CONSTRAINT ptr_transportador_ptr_concelho
-  FOREIGN KEY (concelho) REFERENCES ptr_concelho(id);
-) 
+  FOREIGN KEY (concelho) REFERENCES ptr_concelho(id)
+);
 
 
 
@@ -726,17 +724,14 @@ CREATE TABLE IF NOT EXISTS ptr_basestransportador (
   poluicaoGerada float NOT NULL,
   estado tinyint(2) UNSIGNED NOT NULL,
   conselho smallint(6) NOT NULL,
-  PRIMARY KEY (idBase,idTransportador)
-
-  CONSTRAINT ptr_transportador_ptr_userregistado
-  FOREIGN KEY (idUserNif) REFERENCES ptr_userregistado(nif);
+  PRIMARY KEY (idBase,idTransportador),
 
   CONSTRAINT ptr_basestransportador_ptr_transportador
-  FOREIGN KEY (idTransportador) REFERENCES ptr_transportador(idUserNif);
+  FOREIGN KEY (idTransportador) REFERENCES ptr_transportador(idUserNif),
 
   CONSTRAINT ptr_basestransportador_ptr_estados
-  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
-) 
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
+);
 
 
 DROP TABLE IF EXISTS ptr_veiculostransportador;
@@ -754,14 +749,14 @@ CREATE TABLE IF NOT EXISTS ptr_veiculostransportador (
   custoPorHora float NOT NULL,
   estado tinyint(2) UNSIGNED NOT NULL,
   frigorifico tinyint(1) NOT NULL,
-  PRIMARY KEY (idVeiculo)
+  PRIMARY KEY (idVeiculo),
 
   CONSTRAINT ptr_veiculostransportador_ptr_basestransportador
-  FOREIGN KEY (idBaseTransportador) REFERENCES ptr_basestransportador(idBase)
+  FOREIGN KEY (idBaseTransportador) REFERENCES ptr_basestransportador(idBase),
 
   CONSTRAINT ptr_veiculostransportador_ptr_estados
-  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
-)
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
+);
 
 
 DROP TABLE IF EXISTS ptr_servico;
@@ -779,11 +774,11 @@ CREATE TABLE IF NOT EXISTS ptr_servico (
   moradaDescarga char(150) NOT NULL,
   distritoDescarga smallint(6) NOT NULL,
   conselhoDescarga smallint(6) NOT NULL,
-  PRIMARY KEY (idServico)
+  PRIMARY KEY (idServico),
 
   CONSTRAINT ptr_servico_ptr_veiculostransportador
-  FOREIGN KEY (matriculaVeiculo) REFERENCES ptr_veiculostransportador(matricula)
+  FOREIGN KEY (matriculaVeiculo) REFERENCES ptr_veiculostransportador(matricula),
 
   CONSTRAINT ptr_servico_ptr_estados
-  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado);
-)
+  FOREIGN KEY (estado) REFERENCES ptr_estados(idEstado)
+);
